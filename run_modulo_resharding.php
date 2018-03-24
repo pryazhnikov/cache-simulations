@@ -1,21 +1,60 @@
 #!/usr/bin/env php
 <?php
+/**
+ * Скрипт для расчёта потерь кэша при изменении количества серверов.
+ *
+ * Принцип работы:
+ *
+ * На входе есть количество ключей и набор значений для количества серверов.
+ * Из количества серверов генерируются пары, один элемент которой
+ * считается количестваом серверов до изменения, а второй - после изменения.
+ * С помощью остатка от деления хеша на количество серверов для каждого ключа
+ * определяется индекс сервера до изменения и после. Если они не совспадают,
+ * то мы считаем, что ключ потерян.
+ *
+ * В STDOUT пишется процент потерь кэша для каждой пары количества серверов.
+ */
 
+/**
+ * Использовать полее подробный вывод.
+ * Если этот режим включен, то вывод нельзя будет использовать как CSV!
+ */
 const DEFAULT_VERBOSE_MODE = false;
+/**
+ * Количество ключей в кэше
+ */
 const DEFAULT_KEYS_COUNT = 1e6;
+/**
+ * Количество серверов для анализа
+ */
 const DEFAULT_SHARDS_COUNT_RANGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
+/**
+ * Интерфейс для выбора сервера на базе значения ключа
+ */
 interface IHashingAlgorithm
 {
+    /**
+     * @param string $key          ключ кэширования
+     * @param int    $shards_count доступное количество серверов
+     *
+     * @return int индекс сервера, выбранного для ключа
+     */
     public function getKeyShard(string $key, int $shards_count) : int;
 }
 
 
+/**
+ * Реализаци выбора сервера на базе значения ключа с помощью остатка от деления
+ */
 class ModuloHashing implements IHashingAlgorithm
 {
-    private $keyHashes = [];
+    private $key_hashes = [];
 
+    /**
+     * {@inheritdoc }
+     */
     public function getKeyShard(string $key, int $shards_count) : int
     {
         return $this->getKeyHash($key) % $shards_count;
@@ -23,11 +62,11 @@ class ModuloHashing implements IHashingAlgorithm
 
     private function getKeyHash(string $key) : int
     {
-        if (!isset($this->keyHashes[$key])) {
-            $this->keyHashes[$key] = $this->calculateKeyHash($key);
+        if (!isset($this->key_hashes[$key])) {
+            $this->key_hashes[$key] = $this->calculateKeyHash($key);
         }
 
-        return $this->keyHashes[$key];
+        return $this->key_hashes[$key];
     }
 
     private function calculateKeyHash(string $key) : int
@@ -37,8 +76,23 @@ class ModuloHashing implements IHashingAlgorithm
 }
 
 
-function getLostKeysStats(IHashingAlgorithm $HashAlgo, $total_keys_count, $shards_count_before, $shards_count_after) : iterable
-{
+/**
+ * Вычиссляет процент потерь для заданной пары серверов
+ *
+ * @param IHashingAlgorithm $HashAlgo            реализаци алгоритм выбора сервера
+ * @param int               $total_keys_count    общее количество ключей для проверки
+ * @param int               $shards_count_before количиство серверов до изменения
+ * @param int               $shards_count_after  количиство серверов после изменения
+ *
+ * @return array            массив из двух элементов: общее число потерянных ключей и
+ *                          процент потерянных ключей
+ */
+function getLostKeysStats(
+    IHashingAlgorithm $HashAlgo,
+    $total_keys_count,
+    $shards_count_before,
+    $shards_count_after
+) : array {
     $lost_keys_count = 0;
     for ($i = 0; $i < $total_keys_count; $i++) {
         $key = "user:{$i}";
