@@ -40,7 +40,7 @@
 
 ### Потери кэша
 
-![Процент потерь кэша](images/modulo_resharding_cache_losses.png)
+![Процент потерь кэша](images/modulo_resharding_cache_losses_ru.png)
 
 ### Сглаживание пиков нагрузки при старте системы без кэша
 
