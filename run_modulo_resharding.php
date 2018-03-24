@@ -16,11 +16,6 @@
  */
 
 /**
- * Использовать полее подробный вывод.
- * Если этот режим включен, то вывод нельзя будет использовать как CSV!
- */
-const DEFAULT_VERBOSE_MODE = false;
-/**
  * Количество ключей в кэше
  */
 const DEFAULT_KEYS_COUNT = 1e6;
@@ -28,6 +23,29 @@ const DEFAULT_KEYS_COUNT = 1e6;
  * Количество серверов для анализа
  */
 const DEFAULT_SHARDS_COUNT_RANGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+/**
+ * Разбирает значение аргумента со списком серверов
+ *
+ * @param string $str Значение
+ *
+ * @return array Список количества серверов
+ */
+function parseServersArgument(string $str) : array
+{
+    $str = trim($str);
+
+    // "1-10"
+    if (preg_match('/^(\d+)-(\d+)$/', $str, $match)) {
+        $min_value = intval($match[1]);
+        $max_value = intval($match[2]);
+        return range($min_value, $max_value);
+    }
+
+    // "1,2,3" / "1;2;3" / "1 2 3"
+    return preg_split('/[\s,;]+/', $str);
+}
 
 
 /**
@@ -108,12 +126,29 @@ function getLostKeysStats(
     return [$lost_keys_count, $lost_keys_percent];
 }
 
+// Инициализация параметров прогона
+$argv_options = getopt(
+    '',
+    [
+        "keys::",    // Количество ключей в кэше
+        "servers::", // Варианты для количества серверов
+        "verbose",   // Подробный вывод?
+    ]
+);
 
-// @todo Сделать получение значений из argv
-$total_keys_count = DEFAULT_KEYS_COUNT;
-$is_verbose_mode = (bool)DEFAULT_VERBOSE_MODE;
+$total_keys_count = $argv_options['keys'] ?? DEFAULT_KEYS_COUNT;
+$is_verbose_mode = isset($argv_options['verbose']);
 
-$shards_count_range = DEFAULT_SHARDS_COUNT_RANGE;
+if (empty($argv_options['servers'])) {
+    $shards_count_range = DEFAULT_SHARDS_COUNT_RANGE;
+} else {
+    $shards_count_range = parseServersArgument($argv_options['servers']);
+    if (!$shards_count_range) {
+        print "Cannot parse servers argument value: '{$argv_options['servers']}'";
+        exit(1);
+    }
+}
+
 $shards_count_range = array_unique(array_map('intval', $shards_count_range));
 sort($shards_count_range, SORT_NUMERIC);
 

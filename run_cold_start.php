@@ -78,13 +78,25 @@ function getPeriodHash(array $period_user_ids) : string
 }
 
 
-// @todo сделать получение параметров из argv
-$simulation_time_seconds = DEFAULT_SIMULATION_TIME_SECONDS;
-$number_of_users         = DEFAULT_NUMBER_OF_USERS;
-$requests_per_second     = DEFAULT_REQUESTS_PER_SECONDS;
-$fixed_cache_ttl         = DEFAULT_CACHE_TIME_TO_LIVE_SECONDS;
-$use_random_ttl          = DEFAULT_USE_RANDOM_TTL;
-$is_verbose_mode         = true;
+// Инициализация параметров прогона
+$argv_options = getopt(
+    '',
+    [
+        "time::",  // Время работы симуляции
+        "users::", // Количество уникальных пользователей
+        "rps::",   // Количество запросов в секунду
+        "ttl::",   // Фиксированное время жизни кэша
+        "random",  // Использовать псевдослучайное время жизни кэша
+        "verbose", // Подробный вывод?
+    ]
+);
+
+$simulation_time_seconds = $argv_options['time'] ?? DEFAULT_SIMULATION_TIME_SECONDS;
+$number_of_users         = $argv_options['users'] ?? DEFAULT_NUMBER_OF_USERS;
+$requests_per_second     = $argv_options['rps'] ?? DEFAULT_REQUESTS_PER_SECONDS;
+$fixed_cache_ttl         = $argv_options['ttl'] ?? DEFAULT_CACHE_TIME_TO_LIVE_SECONDS;
+$use_random_ttl          = isset($argv_options['random']) || DEFAULT_USE_RANDOM_TTL;
+$is_verbose_mode         = isset($argv_options['verbose']);
 
 if ($is_verbose_mode) {
     $ttl_mode_name = $use_random_ttl ? 'Random' : 'Fixed';
@@ -97,6 +109,7 @@ if ($is_verbose_mode) {
     print "\n";
 }
 
+// Начало прогона
 $is_header_shown = false;
 $cached_items = [];
 for ($time = 0; $time < $simulation_time_seconds; $time++) {
