@@ -2,3 +2,5 @@
 .vscode/
 .ipynb_checkpoints/
 vendor/
+.DS_Store
+
