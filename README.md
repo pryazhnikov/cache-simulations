@@ -1,4 +1,4 @@
-## Скрипты для симуляции работы кэша
+## Скрипты для симуляции работы кэша [![Build Status](https://travis-ci.org/pryazhnikov/cache-simulations.svg?branch=master)](https://travis-ci.org/pryazhnikov/cache-simulations)
 
 Этот репозиторий содержит вспомогательные материалы для [статьи про кэширование](https://habrahabr.ru/company/badoo/blog/352186/).
 
