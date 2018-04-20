@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" width="900" height="360" viewBox="0 0 900 360" viewport-fill="#fff">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- {{{ Colors legend -->
+  <g transform="translate(420, 350)" style="font: 16px sans-serif; stroke: none; text-anchor: left; alignment-baseline: center;">
+    <g transform="translate(-200, 0)" fill="#FFCC00">
+      <circle cx="0" cy="0" r="5" stroke="#666" stroke-width="1" />
+      <text x="10" y="6">Node A</text>>
+    </g>
+    <g transform="translate(-100, 0)" fill="#FF3300">
+      <circle cx="0" cy="0" r="5" stroke="#666" stroke-width="1" />
+      <text x="10" y="6">Node B</text>>
+    </g>
+    <g transform="translate(0, 0)" fill="#0099FF">
+      <circle cx="0" cy="0" r="5" stroke="#666" stroke-width="1" />
+      <text x="10" y="6">Node C</text>>
+    </g>
+    <g transform="translate(100, 0)" fill="#00CC66">
+      <circle cx="0" cy="0" r="5" stroke="#666" stroke-width="1" />
+      <text x="10" y="6">Node D</text>>
+    </g>
+    <g transform="translate(200, 0)" fill="#666">
+      <circle cx="0" cy="0" r="5" fill="#333333" stroke="#666" stroke-width="1" />
+      <text x="10" y="6">Node E</text>>
+    </g>
+  </g>
+  <!-- Colors legend }}} -->
+
+  <g transform="translate(130, 220)" stroke="#666" stroke-width="1">
+    <text x="0" y="0" dy="8" style="font: 18px sans-serif; font-weight: bold; fill: #000; stroke: none; text-anchor: middle; alignment-baseline: center;">3 nodes available</text>>
+
+    <!-- {{{ Circle 3 -->
+    <circle cx="0" cy="0" r="100" fill="#fff" opacity="0.7" />
+
+    <circle cx="100" cy="0" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="99" cy="10" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="98" cy="21" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="95" cy="31" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="91" cy="41" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="87" cy="50" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="81" cy="59" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="74" cy="67" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="67" cy="74" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="59" cy="81" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="50" cy="87" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="41" cy="91" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="31" cy="95" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="21" cy="98" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="10" cy="99" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="0" cy="100" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-10" cy="99" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-21" cy="98" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="-31" cy="95" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-41" cy="91" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-50" cy="87" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-59" cy="81" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-67" cy="74" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-74" cy="67" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-81" cy="59" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="-87" cy="50" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-91" cy="41" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="-95" cy="31" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-98" cy="21" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="-99" cy="10" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-100" cy="0" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-99" cy="-10" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-98" cy="-21" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-95" cy="-31" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-91" cy="-41" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-87" cy="-50" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-81" cy="-59" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-74" cy="-67" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-67" cy="-74" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-59" cy="-81" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-50" cy="-87" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-41" cy="-91" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-31" cy="-95" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-21" cy="-98" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-10" cy="-99" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-0" cy="-100" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="10" cy="-99" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="21" cy="-98" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="31" cy="-95" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="41" cy="-91" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="50" cy="-87" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="59" cy="-81" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="67" cy="-74" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="74" cy="-67" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="81" cy="-59" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="87" cy="-50" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="91" cy="-41" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="95" cy="-31" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="98" cy="-21" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="99" cy="-10" r="5" fill="#00CC66" color="#00CC66" />
+    <!-- Circle 3 }}} -->
+  </g>
+
+  <!-- {{{ Initial state -->
+  <g transform="translate(450, 10)">
+    <text x="0" y="20" style="font: 18px sans-serif; font-weight: bold; fill: #666; stroke: none; text-anchor: middle;">Initial state: nodes A-D</text>>
+    <line x1="0" y1="30" x2="0" y2="60" stroke="#666" stroke-width="4" marker-end="url(#arrow)" />
+  </g>
+  <!-- Initial state }}} -->
+
+  <!-- {{{ Transition: node removing -->
+  <g transform="translate(278, 220)">
+    <text x="0" y="-50" style="font: 18px sans-serif; font-weight: bold; fill: #666; stroke: none; text-anchor: middle;">
+        <tspan x="15" dy="0">Node B</tspan>
+        <tspan x="15" dy="20">removing</tspan>
+    </text>
+    <line x1="60" y1="0" x2="0" y2="0" stroke="#666" stroke-width="4" marker-end="url(#arrow)" />
+  </g>
+  <!-- Transition: node removing }}} -->
+
+  <!-- {{{ Transition: node adding -->
+  <g transform="translate(562, 220)">
+    <text x="0" y="-50" style="font: 18px sans-serif; font-weight: bold; fill: #666; stroke: none; text-anchor: middle;">
+        <tspan x="45" dy="0">Node E</tspan>
+        <tspan x="45" dy="20">adding</tspan>
+    </text>
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#666" stroke-width="4" marker-end="url(#arrow)" />
+  </g>
+  <!-- Transition: node adding }}} -->
+
+  <g transform="translate(450, 220)" stroke="#666" stroke-width="1">
+    <text x="0" y="0" dy="8" style="font: 18px sans-serif; font-weight: bold; fill: #000; stroke: none; text-anchor: middle; alignment-baseline: center;">4 nodes available</text>>
+
+    <!-- {{{ Circle 4 -->
+    <circle cx="0" cy="0" r="100" fill="#fff" opacity="0.7" />
+
+    <circle cx="100" cy="0" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="99" cy="10" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="98" cy="21" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="95" cy="31" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="91" cy="41" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="87" cy="50" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="81" cy="59" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="74" cy="67" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="67" cy="74" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="59" cy="81" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="50" cy="87" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="41" cy="91" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="31" cy="95" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="21" cy="98" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="10" cy="99" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="0" cy="100" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-10" cy="99" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-21" cy="98" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-31" cy="95" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-41" cy="91" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-50" cy="87" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-59" cy="81" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-67" cy="74" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-74" cy="67" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-81" cy="59" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-87" cy="50" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-91" cy="41" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-95" cy="31" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-98" cy="21" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-99" cy="10" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-100" cy="0" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-99" cy="-10" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-98" cy="-21" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-95" cy="-31" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-91" cy="-41" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-87" cy="-50" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-81" cy="-59" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-74" cy="-67" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-67" cy="-74" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-59" cy="-81" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-50" cy="-87" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-41" cy="-91" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-31" cy="-95" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-21" cy="-98" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-10" cy="-99" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-0" cy="-100" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="10" cy="-99" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="21" cy="-98" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="31" cy="-95" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="41" cy="-91" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="50" cy="-87" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="59" cy="-81" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="67" cy="-74" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="74" cy="-67" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="81" cy="-59" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="87" cy="-50" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="91" cy="-41" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="95" cy="-31" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="98" cy="-21" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="99" cy="-10" r="5" fill="#00CC66" color="#00CC66" />
+    <!-- Circle 4 }}} -->
+  </g>
+
+  <g transform="translate(770, 220)" stroke="#666" stroke-width="1">
+    <text x="0" y="0" dy="8" style="font: 18px sans-serif; font-weight: bold; fill: #000; stroke: none; text-anchor: middle; alignment-baseline: center;">5 nodes available</text>>
+
+    <!-- {{{ Circle 5 -->
+    <circle cx="0" cy="0" r="100" fill="#fff" opacity="0.7" />
+
+    <circle cx="100" cy="0" r="5" fill="#333333" color="#333333" />
+    <circle cx="99" cy="10" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="98" cy="21" r="5" fill="#333333" color="#333333" />
+    <circle cx="95" cy="31" r="5" fill="#333333" color="#333333" />
+    <circle cx="91" cy="41" r="5" fill="#333333" color="#333333" />
+    <circle cx="87" cy="50" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="81" cy="59" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="74" cy="67" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="67" cy="74" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="59" cy="81" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="50" cy="87" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="41" cy="91" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="31" cy="95" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="21" cy="98" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="10" cy="99" r="5" fill="#FFCC00" color="#FFCC00" />
+    <circle cx="0" cy="100" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-10" cy="99" r="5" fill="#333333" color="#333333" />
+    <circle cx="-21" cy="98" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-31" cy="95" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-41" cy="91" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-50" cy="87" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-59" cy="81" r="5" fill="#333333" color="#333333" />
+    <circle cx="-67" cy="74" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-74" cy="67" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-81" cy="59" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-87" cy="50" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-91" cy="41" r="5" fill="#333333" color="#333333" />
+    <circle cx="-95" cy="31" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-98" cy="21" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-99" cy="10" r="5" fill="#FF3300" color="#FF3300" />
+    <circle cx="-100" cy="0" r="5" fill="#333333" color="#333333" />
+    <circle cx="-99" cy="-10" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-98" cy="-21" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-95" cy="-31" r="5" fill="#333333" color="#333333" />
+    <circle cx="-91" cy="-41" r="5" fill="#333333" color="#333333" />
+    <circle cx="-87" cy="-50" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-81" cy="-59" r="5" fill="#333333" color="#333333" />
+    <circle cx="-74" cy="-67" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-67" cy="-74" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-59" cy="-81" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-50" cy="-87" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-41" cy="-91" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-31" cy="-95" r="5" fill="#333333" color="#333333" />
+    <circle cx="-21" cy="-98" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-10" cy="-99" r="5" fill="#0099FF" color="#0099FF" />
+    <circle cx="-0" cy="-100" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="10" cy="-99" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="21" cy="-98" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="31" cy="-95" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="41" cy="-91" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="50" cy="-87" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="59" cy="-81" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="67" cy="-74" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="74" cy="-67" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="81" cy="-59" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="87" cy="-50" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="91" cy="-41" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="95" cy="-31" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="98" cy="-21" r="5" fill="#00CC66" color="#00CC66" />
+    <circle cx="99" cy="-10" r="5" fill="#00CC66" color="#00CC66" />
+    <!-- Circle 5 }}} -->
+  </g>
+</svg>
