@@ -1,48 +1,51 @@
-## Скрипты для симуляции работы кэша [![Build Status](https://travis-ci.org/pryazhnikov/cache-simulations.svg?branch=master)](https://travis-ci.org/pryazhnikov/cache-simulations)
+## Cache Simulation Scripts [![Build Status](https://travis-ci.org/pryazhnikov/cache-simulations.svg?branch=master)](https://travis-ci.org/pryazhnikov/cache-simulations)
 
-Этот репозиторий содержит вспомогательные материалы для [статьи про кэширование](https://habrahabr.ru/company/badoo/blog/352186/).
+[Русская версия](README.ru.md)
 
-Файловая структура:
+This repo contains additional materials for caching problems article.
 
-```
-  data/                      - CSV файлы с данными, сгенерированными скриптами
-  image_sources/             - оригинальные файлы, которые использовались для генерации картинок
-  images/                    - готовые изображения-визуализации сгенерированных данных
-  run_cold_start.php         - скрипт для синтетического теста старта системы с непрогретым кэшом
-  run_modulo_resharding.php  - скрипт для расчёта потерь кэша при изменении количества серверов
-  visualization.ipynb        - Jupyter блокнот, визуализирующий сгенерированные данные
-```
-
-## Как запускать скрипты?
-
-Для работы скриптов необходим PHP 7.1 и выше.
+File structure:
 
 ```
-# Эмуляция проблемы старта системы с непрогретым кэшом
+  data/                      - CSV files with script built data
+  image_sources/             - image source files
+  images/                    - rady to use images (schemes & visualizations)
+  run_cold_start.php         - a script for a synthetic test of system start with an empty cache
+  run_modulo_resharding.php  - a script for calculating the cache loss on servers count change
+  visualization.ipynb        - Jupyter notebook with data visualizations
+```
 
-## В системе 10 тысяч пользователей, получаем 1 тысячу запросов в секунду,
-## наблюдаем за системой 200 секунд, используем фиксированное время жизни кэша.
+## How to run the scripts?
+
+
+PHP 7.1+ is mandatory to run the scripts.
+
+```
+# Emulating the problem of system start with an empty cache
+
+## Using 10K unique users in the system, getting 1K requests per second,
+## looking at the system for 200 seconds, using a fixed cache lifetime
 ./run_cold_start.php --rps=1000 --users=10000 --time=200
 
-## То же самое, но с использованием псевдослучайного времени жизни кэша.
+## The same, but using the pseudo-random cache lifetime instead of the fixed one.
 ./run_cold_start.php --rps=1000 --users=10000 --time=200 --random
 
-# Потери кэша при изменении количества серверов
+# The cache loss on servers count change
 
-## Считать для 100 тысяч ключей и для ситуации с 4 и 5 серверами
+## Consider for the case with 100 thousand keys and for the situation with 4 and 5 servers
 ./run_modulo_resharding.php --keys=100000 --servers=4,5
 
-## Считать для 100 тысяч ключей и для ситуации от 1 до 10 серверов
+## Consider for the case with 100 thousand keys and for the situation with 1-10 servers
 ./run_modulo_resharding.php --keys=10000 --servers="1-10"
 
 ```
 
-##  Примеры визуализаций
+##  Visualization examples
 
-### Потери кэша
+### Cache loss percent on servers count change
 
-![Процент потерь кэша](images/modulo_resharding_cache_losses_ru.png)
+![Cache loss percent](images/modulo_resharding_cache_losses_en.png)
 
-### Сглаживание пиков нагрузки при старте системы без кэша
+### Cache miss peaks smoothing on system start with an empty cache
 
-![Сглаживание пиков нагрузки](images/cold_start_peaks_ru.png)
+![Hit miss peaks smoothing](images/cold_start_peaks_en.png)
