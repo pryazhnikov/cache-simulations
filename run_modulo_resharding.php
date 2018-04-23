@@ -1,18 +1,18 @@
 #!/usr/bin/env php
 <?php
 /**
- * Скрипт для расчёта потерь кэша при изменении количества серверов.
+ * A script for calculating the cache loss on the servers count change.
  *
- * Принцип работы:
+ * How it works:
  *
- * На входе есть количество ключей и набор значений для количества серверов.
- * Из количества серверов генерируются пары, один элемент которой
- * считается количестваом серверов до изменения, а второй - после изменения.
- * С помощью остатка от деления хеша на количество серверов для каждого ключа
- * определяется индекс сервера до изменения и после. Если они не совспадают,
- * то мы считаем, что ключ потерян.
+ * The input has the number of keys and a set of values for the servers count.
+ * The pairs of servers count are generated using the input set. Each pair consist of
+ * the number of servers before the change, and the number of servers after the change.
+ * Using the remainder of dividing the hash by the number of servers for each key
+ * the server index is evaluated for the server counts at the pair. If the server indexes are different,
+ * we treat this key as a lost one.
  *
- * В STDOUT пишется процент потерь кэша для каждой пары количества серверов.
+ * The percentage of cache losses for each pair of servers is written to STDOUT.
  */
 
 /**
@@ -95,7 +95,7 @@ class ModuloHashing implements IHashingAlgorithm
 
 
 /**
- * Вычиссляет процент потерь для заданной пары серверов
+ * Вычисляет процент потерь для заданной пары серверов
  *
  * @param IHashingAlgorithm $HashAlgo            реализаци алгоритм выбора сервера
  * @param int               $total_keys_count    общее количество ключей для проверки
@@ -116,7 +116,7 @@ function getLostKeysStats(
         $key = "user:{$i}";
         $key_shard_before = $HashAlgo->getKeyShard($key, $shards_count_before);
         $key_shard_after  = $HashAlgo->getKeyShard($key, $shards_count_after);
-        
+
         if ($key_shard_before != $key_shard_after) {
             $lost_keys_count++;
         }
@@ -169,7 +169,7 @@ foreach ($shards_count_range as $shards_count_before) {
             $shards_count_before,
             $shards_count_after
         );
-        
+
         $item = [
             'ShardsBefore'    => $shards_count_before,
             'ShardsAfter'     => $shards_count_after,
