@@ -3,6 +3,10 @@ php:
   - '7.1'
   - '7.2'
   - nightly
+addons:
+  apt:
+    packages:
+      - libonig-dev
 script:
   - ./run_cold_start.php --rps=100 --users=1000 --time=20 1>/dev/null
   - ./run_cold_start.php --rps=100 --users=1000 --time=20 --random 1>/dev/null
